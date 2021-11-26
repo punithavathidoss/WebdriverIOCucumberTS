@@ -1,0 +1,23 @@
+{
+    "firstname": "Puni",
+    "lastname": "Poo",
+    "password": "Puni123@",
+    "DateOfBirth": {
+        "day": "4",
+        "month": "4",
+        "year": "1997"
+    },
+    "Address": {
+        "firstname": "Puni",
+        "lastname": "Poo",
+        "company": "capgemini",
+        "address1": "My address",
+        "address2": "My address only",
+        "city": "mycity",
+        "State": "3",
+        "Zipcode": "123457",
+        "Country": "21",
+        "Mobile": "4578912347",
+        "AlisaAddress": "Any Address"
+    }
+}
