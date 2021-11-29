@@ -10,27 +10,21 @@ Given(/^I am in the online clothing home page$/, async () => {
     browser.maximizeWindow()
 });
 
-When(/^I click on sign in element and it navigates to create an account page$/, async () => {
+When(/^I click on sign in element$/, async () => {
     await signInTesting.signInElement.click();
 });
 Then(/^I validate the sign in page header$/, async () => {
     await expect(signInTesting.headerElement).toHaveTextContaining("AUTHENTICATION")
 });
 
-When(/^I enter a random mail Id$/, async () => {
+When(/^I enter a random mail Id and click for submission$/, async () => {
     await signInTesting.mailId.setValue(randomdata.internet.email());
-});
-
-When(/^I click on create an account for submission$/, async () => {
     await signInTesting.createaccountbtn.click();
 });
 
-When(/^I am navigated to the account creation page$/, async () => {
-    await signInTesting.accounturl()
+Then(/^I check page header for validation with text \"([^\"]*)\"$/, async (createAccountText) => {
+    await expect(signInTesting.accountHeaderElement).toHaveTextContaining(createAccountText)
 });
-Then(/^I check page header for validation$/, async () => {
-    await expect(signInTesting.accountHeaderElement).toHaveTextContaining("CREATE AN ACCOUNT")
-})
 
 When(/^I start to fill the required credentials for registration$/, async () => {
     await signInTesting.fName.setValue(signup.firstname)
@@ -58,8 +52,8 @@ When(/^I click on Register for account creation$/, async () => {
 
 });
 
-Then(/^I should see header for validation$/, async () => {
-    await expect(signInTesting.headtext).toHaveTextContaining("MY ACCOUNT")
+Then(/^I should see header text as \"([^\"]*)\" for validation$/, async (myaccount) => {
+    await expect(signInTesting.headtext).toHaveTextContaining(myaccount)
 });
 
 
@@ -72,7 +66,7 @@ When(/^I enter into women selection$/, async () => {
 });
 
 When(/^Adding product to the cart$/, async () => {
-   // await automationCartTest.productContainer.waitForDisplayed()
+    // await automationCartTest.productContainer.waitForDisplayed()
     await automationCartTest.productContainer.scrollIntoView()
     await automationCartTest.productContainer.moveTo()
     await automationCartTest.productContainer.waitForClickable()
@@ -86,8 +80,8 @@ When(/^I proceed for checkout$/, async () => {
     await automationCartTest.proceedCart.click()
 });
 
-Then(/^I validate the page name containing Shopping cart summary$/, async () => {
-    await expect(automationCartTest.shoppingCartHeader).toHaveTextContaining("SHOPPING-CART SUMMARY")
+Then(/^I validate the page name containing \"([^\"]*)\"$/, async (shoppingcartsummary) => {
+    await expect(automationCartTest.shoppingCartHeader).toHaveTextContaining(shoppingcartsummary)
 });
 When(/^I proceed for checkout in summary page$/, async () => {
     await automationCartTest.proceedSummary.click()
@@ -100,8 +94,8 @@ When(/^I am clicking proceed for checkout$/, async () => {
     await automationCartTest.proceedAddress.click()
 });
 
-Then(/^I am validating header of the shipping page$/, async () => {
-    await expect(automationCartTest.shippingHeader).toHaveTextContaining("SHIPPING")
+Then(/^I am validating header of the shipping page with \"([^\"]*)\"$/, async (shipping) => {
+    await expect(automationCartTest.shippingHeader).toHaveTextContaining(shipping)
 });
 When(/^I click terms and conditions check box$/, async () => {
     await automationCartTest.checktnc.click()
@@ -126,8 +120,8 @@ Then(/^I click on confirm my order in payment page$/, async () => {
     await automationCartTest.confirmOrderbtn.click()
 });
 
-Then(/^I validate the order confirmation page with header text$/, async () => {
-    await expect(automationCartTest.ConfirmOrdervalidation).toHaveTextContaining("ORDER CONFIRMATION")
+Then(/^I validate the order confirmation page with header text \"([^\"]*)\"$/, async (orderconfirmation) => {
+    await expect(automationCartTest.ConfirmOrdervalidation).toHaveTextContaining(orderconfirmation)
 });
 
 
