@@ -1,25 +1,27 @@
 # WEBDRIVERIOCUCUMBERTS
 <p>Cucumber Framework using WebdriverIO with Typescript</p>
 
-## Tools required
 
- node JS => version 12.-.- or Latest version <br>
- npm => 6.-.- (check for the version, which downloads along with node)
+## Tools required
+<ul>
+ <li>node JS => version 12.-.- or Latest version </li>
+ <li>npm => 6.-.- (check for the version, which downloads along with node)</li>
+</ul>
 
 ## Commands
 
-<p> Commands to run your file </p>
+<p> -- Commands to run your test files -- </p>
 
 
-### Dependency Installation:
+#### Dependency Installation:
 
 npm install
 
-### To Run tests:
+#### To Run tests:
 
 npm run test 
 
-### To Run allure report:
+#### To Run allure report:
 
 npm run report
 
