@@ -22,3 +22,5 @@ npm run test
 ### To Run allure report:
 
 npm run report
+
+<p>After running allure report, you will get the report of your tests</p>
