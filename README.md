@@ -3,7 +3,7 @@
 
 ## Tools required
 
- node JS => version 12.-.- or Latest version
+ node JS => version 12.-.- or Latest version <br>
  npm => 6.-.- (check for the version, which downloads along with node)
 
 ## Commands
